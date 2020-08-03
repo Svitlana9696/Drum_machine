@@ -1,0 +1,202 @@
+* {
+  box-sizing: content-box;
+}
+body {
+  background-image: url("./120918_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+}
+
+#drum-machine {
+  background-color: #deebce;
+  display: flex;
+  border: solid 5px black;
+  margin: auto;
+  margin-top: 200px;
+  width: 600px;
+  height: 400px;
+  place-items: center;
+}
+.grid-container {
+  margin: 15px;
+  padding: 15px;
+  display: grid;
+  border: solid 2px black;
+  grid-template-columns: auto auto auto;
+  place-items: left;
+  width: 300px;
+  height: 300px;
+}
+#display {
+  position: relative;
+  display: block;
+  border: solid 2px transparent;
+  margin: 15px;
+  width: 300px;
+  height: 300px;
+  justify-self: center;
+}
+.label {
+  margin: 15px auto;
+  display: block;
+  text-align: center;
+  place-items: center;
+}
+
+.text-place {
+  position: relative;
+  background-color: #728726;
+  border: solid 2px transparent;
+  border-radius: 5%;
+  width: 150px;
+  height: 50px;
+  color: #0d0d0d;
+  justify-content: center;
+  font-size: 35px;
+  padding: auto;
+}
+
+span {
+  display: block;
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 2px 2px yellow;
+}
+.grid-item {
+  background-color: #d1ce4d;
+  border: solid 2px #728726;
+  border-radius: 7%;
+  box-shadow: 0 0 10px rgba(41, 122, 55, 0.5);
+  padding: 25px;
+  margin: 5px;
+  text-align: center;
+  justify-items: center;
+  width: 90px;
+  height: 90px;
+  box-sizing: border-box;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.slider {
+  position: relative;
+  border-radius: 34px;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #728726;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #728726;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*range*/
+input[type="range"] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+#myRange {
+  appearance: horizontal;
+  color: yellow;
+  background-color: #d1ce4d;
+  width: auto;
+  height: 5px;
+  border: solid 2px #d1ce4d;
+  border-radius: 10%;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #728726;
+  cursor: pointer;
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
